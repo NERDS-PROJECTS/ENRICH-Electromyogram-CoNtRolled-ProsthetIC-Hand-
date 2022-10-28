@@ -1,0 +1,1 @@
+# ENRICH-Electromyogram-CoNtRolled-ProsthetIC-Hand-
