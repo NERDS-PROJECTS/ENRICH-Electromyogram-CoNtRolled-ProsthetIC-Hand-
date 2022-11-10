@@ -25,7 +25,6 @@ Figure 3: Circuit diagram for datalogger
 We are using a ESP32 module with SD card module (as shown in Figure 3) to save the signal generator data in the SD card. Previously, the signal generator data was saved in google spreadsheet. Appscript software is used while connecting with the Wi-Fi username and password and auto updating the real-time data in the spreadsheet using the Arduino IDE code. 
  
 
-Technical Dossier
 
 Name of the Technology: ENRICH by Prof. Nayan M. Kakoty.
 Patent Application Number: 201931049269.
@@ -38,20 +37,25 @@ Leobardo et al. [6], The use of a commercial EMG armband for the motion control 
 Abarca et al. [7], This work describes the development of a prosthesis hand prototype with an active wrist. The Octa Hand can perform at least six grasping shapes: rest, tip, tripod, power, spherical and extension. Cables and pulley mechanism was used on each finger to enable the flexion/extension and under-actuated abduction/adduction movement while worm drive and internal helical gear mechanisms were used on the wrist to enable the flexion/extension and pronation/supination movements. To obtain an anthropomorphic, compact, low-weight and low-cost result, the prototype was designed based on a CAD model using 3D scanner technology, and the prototype was manufactured with 3D printed technology with a total weight of 950g.
 Zhou et al. [8], The thumb of a natural hand or a prosthetic hand plays a significant role in realizing a hand's grasping and manipulation activities. This requires that mechanical design of a prosthetic hand should allow its thumb to perform both abduction/adduction and flexion/extension in order to mimic a natural hand's grasping and manipulation abilities with a minimum number of actuators. The thumb and the whole prosthetic hand were fabricated using a low-cost three-dimensional printing technology, with sizes comparable to those of real human ones but with much lighter weights. Based on the concepts of soft robotics and under actuation, the thumb shows significant mechanical compliance and performs well in power grasps, precision grasps, and lateral grasps of different shaped and sized household objects. The soft thumb has two modes of operation based on an innovative and compact mechanism, and one actuator only offers grasping versatility.
 Atasoy et al. [9], The anatomical structure of the hand and its parts; muscles, tendons, bones, and ligaments give the hand its dexterous capabilities in a very efficient way. Studying these structures is important for adapting anthropomorphic features in prosthetic devices. Giving the anthropomorphic features to a prosthetic hand increases the complexity of the mechanical design; therefore, the control of the system can simplify the mechanical structure.
-MG958 [10] servo motor (shown in Figure 4) is use for high torque purpose ranging more than 15KG. Its operational range is from 4.8-6V and gives a full-scale movement of 180 degrees. Its response time is 0.18sec per degree when it is operated in 4.8V and 0.15sec degree operating in 6V.
+
 
 ![Screenshot (197)](https://user-images.githubusercontent.com/99505309/201054337-598d83fb-a158-4ee4-ba17-1524e0e94e41.png)
+
+MG958 [10] servo motor (shown in Figure 6) is use for high torque purpose ranging more than 15KG. Its operational range is from 4.8-6V and gives a full-scale movement of 180 degrees. Its response time is 0.18sec per degree when it is operated in 4.8V and 0.15sec degree operating in 6V.
 
  
  ![image](https://user-images.githubusercontent.com/99505309/198616656-48083993-fd6b-411b-94eb-d8aa88cc42c6.png)
 
-Figure 4: MG958 servo motor
+Figure 6: MG958 servo motor
+
+ESP32 [7] (shown in Figure 7) is a powerful, generic Wi-Fi+ BT+BLE MCU module that targets a wide variety of applications, ranging from low-power sensor networks to the most demanding tasks, such as voice encoding, music streaming and MP3 decoding.
+An alternate for ESP32 is NODEMCU/ESP8266 [12] module having similar features of Wi-Fi connectivity and Bluetooth. In the setup the analog input is configured in order to exploit the whole range, the analog input is converted by a 12-bit ADC therefore the conversion result goes from 0 to 4095, with attenuation of 6dB the full scale corresponds to 2.2V. The Wi-Fi part of the card is then configured and the connection to the Wi-Fi network is made. The web server is then instantiated on the card and will respond to our http queries.  You instantiate a client object that waits for connections. When a connection is detected, the http request is read (in our case absolutely trivial) and the response is prepared. In our case the response is the reading of the acquired analog signal.
+
  
  ![image](https://user-images.githubusercontent.com/99505309/198616452-69fe4cdd-c23e-4a80-b269-62cb476aabe1.png)
 
-Figure 5: ESP32
-ESP32 [11] (shown in Figure 5) is a powerful, generic Wi-Fi+ BT+BLE MCU module that targets a wide variety of applications, ranging from low-power sensor networks to the most demanding tasks, such as voice encoding, music streaming and MP3 decoding.
-An alternate for ESP32 is NODEMCU/ESP8266 [12] module having similar features of Wi-Fi connectivity and Bluetooth. In the setup the analog input is configured in order to exploit the whole range, the analog input is converted by a 12-bit ADC therefore the conversion result goes from 0 to 4095, with attenuation of 6dB the full scale corresponds to 2.2V. The Wi-Fi part of the card is then configured and the connection to the Wi-Fi network is made. The web server is then instantiated on the card and will respond to our http queries.  You instantiate a client object that waits for connections. When a connection is detected, the http request is read (in our case absolutely trivial) and the response is prepared. In our case the response is the reading of the acquired analog signal.
+Figure 7: ESP32
+
 
 Relevant Patent:
 Title: Electromyography with prosthetic or orthotic devices
@@ -79,15 +83,33 @@ Potential for Technology Level Up-Gradation and/or Commercialization:
 Hand prostheses should provide functional replacements of lost hands. Yet current prosthetic hands often are not intuitive to control and easy to use by amputees. Commercially available prostheses are usually controlled based on EMG signals triggered by the user to perform grasping tasks. Such EMG-based control requires long training and depends heavily on the robustness of the EMG signals. Rather than EMG based Prosthetic hands, the possible upgradation can be on hands with multi-modal sensors and camera or in the newest versions a distance sensor and IMU (Inertial Measurement Unit) on fingers which could correspond to different objects and accordingly create a grasp type on initiating with the EMG signals. The future goal is to develop prosthetic hands with semi-autonomous grasping abilities that lead to more intuitive control by the user. The developed prostheses would provide intelligent mechatronics including adaptive actuation, multi-modal sensing and on-board computing resources to enable autonomous and intuitive control. The hands are scalable in size and based on an underactuated mechanism which allows the adaptation of grasps to the shape of arbitrary objects. A resource-aware embedded system for in-hand processing of sensory data and control is included in the palm of each hand. To provide support for the user performing diverse activities of daily living (ADL), as for example food preparation, housekeeping or tool use amongst others, a prosthesis has to be reliable and versatile in terms of its grasping capabilities, i.e., it should be able to successfully perform a wide variety of ADLs. The user expects their prosthesis to be effortless and intuitive despite the inherent complexity of the mechatronics and control. The pivotal point of our hand development is therefore to endow prosthetic hands with intelligent grasping capabilities to support intuitiveness-of-use and to reduce the cognitive burden of the user. 
 Talking about ENRICH, at this point of time, it is equipped with only one grasp type, i.e., power grasp. The further improvement includes incorporating precision grasp type into the prosthetic hand. Again, addition of the data logger circuit will help in real time data acquisition which will then be used to further improvement.
  
- References-
  
+References-
+
 [1] Kakoty, N.M., Kaiborta, M. and Hazarika, S.M., 2012. Electromyographic grasp recognition for a five fingered robotic hand. Int. J. Robot. Autom, 2, pp.1-10. 
 
-[2] Joshi, D., Atreya, S., Arora, A.S. and Anand, S., 2009. Trends in EMG based prosthetic hand development: a review. Indian Journal of Biomechanics, pp.228-232.
+[2] Joshi, D., Atreya, S., Arora, A.S. and Anand, S., 2009. Trends in EMG based prosthetic hand development: a review. Indian Journal of Biomechanics, pp.228-232. 
 
-[3] Antfolk, C., Cipriani, C., Controzzi, M., Carrozza, M.C., Lundborg, G., Rosén, B. and Sebelius, F., 2010. Using EMG for real-time prediction of joint angles to control a prosthetic hand equipped with a sensory feedback system. Journal of Medical and Biological Engineering, 30(6), pp.399-406.
+[3] Antfolk, C., Cipriani, C., Controzzi, M., Carrozza, M.C., Lundborg, G., Rosén, B. and Sebelius, F., 2010. Using EMG for real-time prediction of joint angles to control a prosthetic hand equipped with a sensory feedback system. Journal of Medical and Biological Engineering, 30(6), pp.399-406. 
 
-[4] Fajardo, J., Ferman, V., Cardona, D., Maldonado, G., Lemus, A. and Rohmer, E., 2020. Galileo hand: An anthropomorphic and affordable upper-limb prosthesis. IEEE access, 8, pp.81365-81377.
+[4] Juan Pablo S. Sola, Masudal, Haider Imtiaz, Ernetso Sola- Thomas, Designing a Prosthetic Hand as a College Freshman,2022 Conference paper ResearchGate
 
-[5] Sánchez-Velasco, L.E., Arias-Montiel, M., Guzmán-Ramírez, E. and Lugo-González, E., 2020. A low-cost emg-controlled anthropomorphic robotic hand for power and precision grasp. Biocybernetics and Biomedical Engineering, 40(1), pp.221-237.
+[5] Fajardo, J., Ferman, V., Cardona, D., Maldonado, G., Lemus, A. and Rohmer, E., 2020. Galileo hand: An anthropomorphic and affordable upper-limb prosthesis. IEEE access, 8, pp.81365-81377.
+
+[6] Sánchez-Velasco, L.E., Arias-Montiel, M., Guzmán-Ramírez, E. and Lugo-González, E., 2020. A low-cost emg-controlled anthropomorphic robotic hand for power and precision grasp. Biocybernetics and Biomedical Engineering, 40(1), pp.221-237.
+
+[7] Abarca, V.E., Flores, K.M. and Elías, D., 2019, April. The octa hand: An affordable multi-grasping 3d-printed robotic prosthesis for transradial amputees. In 2019 5th International Conference on Control, Automation and Robotics (ICCAR) (pp. 92-97). IEEE.
+
+[8] Zhou, H., Mohammadi, A., Oetomo, D. and Alici, G., 2019. A novel monolithic soft robotic thumb for an anthropomorphic prosthetic hand. IEEE Robotics and Automation Letters, 4(2), pp.602-609.
+
+[9] Atasoy, A., Toptaş, E., Kuchimov, S., Gulfize, S., Turpcu, M., Kaplanoglu, E., Güçlü, B. and Özkan, M., 2018, August. Biomechanical design of an anthropomorphic prosthetic hand. In 2018 7th IEEE International Conference on Biomedical Robotics and Biomechatronics (Biorob) (pp. 732-736). IEEE.
+
+[10] TowerPro (2014). MG958 - TowerPro. [online] Available at:    www.towerpro.com.tw/product/mg958/ [Accessed 26 Jul. 2022].
+
+[11] ESP32 (2022). ESP32 Series Datasheet. [online] Available at: www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf [Accessed 27 July 2022].
+
+[12] ESP8266EX (2022). ESP8266EX Datasheet. [online] Available at: https://espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf [Accessed 27 July 2022].
+
+
+
 
